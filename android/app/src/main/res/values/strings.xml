@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">Fastvai</string>
+<string name="facebook_app_id">559460645145380</string>
+<string name="fb_login_protocol_scheme">fb559460645145380</string>
+<string name="facebook_client_token">c911dc4e4194a2f11b8d1daea51544bb</string>
+
+</resources>

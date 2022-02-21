@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "283778454794",
+    "project_id": "fastvai-321311",
+    "storage_bucket": "fastvai-321311.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283778454794:android:3fe4de3b2d7f5c2fd596f3",
+        "android_client_info": {
+          "package_name": "com.fastvai.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283778454794-65dihc89dmt21rv555qmhgjeqjsgvsut.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fastvai.com",
+            "certificate_hash": "bd4184359219bf655d3e82f0c577430f4db4f66c"
+          }
+        },
+        {
+          "client_id": "283778454794-b0p3voirs5mr0h0vas5dtns0n38itv9m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fastvai.com",
+            "certificate_hash": "51738ffcbff0442df337e8e88adf23f9daafdcd6"
+          }
+        },
+        {
+          "client_id": "283778454794-cj61kvg5og5v6n9idthsibttb0pej6ot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy4pyVUCz-QuPjSTv-e1u6g7jQ3U8LqrI"
+        },
+        {
+          "current_key": "AIzaSyDTZ8IvT_eMuztOOjuaB8P2X3OGGDZKLz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283778454794-cj61kvg5og5v6n9idthsibttb0pej6ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283778454794:android:961e8b2f6536700bd596f3",
+        "android_client_info": {
+          "package_name": "com.fastvai.delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283778454794-cj61kvg5og5v6n9idthsibttb0pej6ot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy4pyVUCz-QuPjSTv-e1u6g7jQ3U8LqrI"
+        },
+        {
+          "current_key": "AIzaSyDTZ8IvT_eMuztOOjuaB8P2X3OGGDZKLz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283778454794-cj61kvg5og5v6n9idthsibttb0pej6ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283778454794:android:6460f26ea42b7506d596f3",
+        "android_client_info": {
+          "package_name": "com.fastvaiadmin.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283778454794-cj61kvg5og5v6n9idthsibttb0pej6ot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy4pyVUCz-QuPjSTv-e1u6g7jQ3U8LqrI"
+        },
+        {
+          "current_key": "AIzaSyDTZ8IvT_eMuztOOjuaB8P2X3OGGDZKLz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283778454794-cj61kvg5og5v6n9idthsibttb0pej6ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
