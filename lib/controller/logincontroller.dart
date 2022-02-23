@@ -9,10 +9,13 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:sizer/sizer.dart';
+import 'package:fastvai/Models/user_model.dart';
 
 class Logincontroller extends GetxController {
   var userdata = [].obs;
   var islogin = false.obs;
+  var Userslist = <Users>[].obs;
 
   checklogin() async {
     final prefs = await SharedPreferences.getInstance();
@@ -73,17 +76,19 @@ class Logincontroller extends GetxController {
 
   register(String email, String id, String name, String image) async {
     Get.defaultDialog(
+        title: '',
         content: Center(
           child: Container(
             color: Colors.white,
             height: 100,
             width: 100,
             child: Column(
-              children: const [
+              children: [
                 CircularProgressIndicator(
                   color: Colors.black,
                 ),
-                Text('Loading')
+                SizedBox(height: 2.h),
+                Text('Please wait')
               ],
             ),
           ),
@@ -106,19 +111,24 @@ class Logincontroller extends GetxController {
           "password": id,
         }));
     print('${Apiconfig.url}${Apiconfig.register}${Apiconfig.tkey}');
+    print('status code:${response.statusCode}');
     print(response.body);
 
     // var response = await client
     //     .post(Uri.parse(Apiconfig.url + Apiconfig.register + Apiconfig.tkey));
-    if (response.statusCode == 200) {
+    if (response.statusCode == 201) {
+      var storeList = userFromJson('[${response.body}]');
       final prefs = await SharedPreferences.getInstance();
-      prefs.setStringList('userdetails', [id, image, email, name]);
+      prefs.setStringList(
+          'userdetails', [storeList[0].id.toString(), image, email, name]);
+      print(storeList[0].id.toString());
 
       var testlist = [id, image, email, name];
       userdata(testlist);
       islogin(true);
       Get.back();
-      print('test result${response.body}');
-    }
+      Get.back();
+      //  print('test result${response.body}');
+    } else if (response.statusCode == 400) {}
   }
 }
