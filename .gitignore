@@ -42,6 +42,7 @@ app.*.map.json
 
 # Android Studio will place build artifacts here
 /android/app/debug
+/android/app/main
 /android/app/profile
 /android/app/release
 key.properties
@@ -50,3 +51,6 @@ lib/config.dart
 .gitignore
 lib/api_services
 lib/controller
+
+.gitignore
+
