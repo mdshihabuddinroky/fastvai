@@ -30,8 +30,11 @@ class MyTheme {
   static Color font_grey = Color.fromRGBO(73, 73, 73, 1);
   static Color textfield_grey = Color.fromRGBO(209, 209, 209, 1);
   static Color golden = Color.fromRGBO(248, 181, 91, 1);
-  static Color shimmer_base = Colors.grey.shade50;
+  static Color shimmer_base = Color(0xFFF4F4F4);
   static Color shimmer_highlighted = Colors.grey.shade200;
+  // static Color base= Color(0xFFEBEBF4),
+  //static Color base =   Color(0xFFF4F4F4);
+// static const  testshimmer =   ;
 
   //testing shimmer
   /*static Color shimmer_base = Colors.redAccent;

@@ -92,18 +92,9 @@ class _StoreScreenState extends State<StoreScreen>
     ];
 
     return Obx(() => Scaffold(
-        appBar: AppBar(
-          title: (ismyaccount.value)
-              ? Center(
-                  child: Text('My Account',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 1.2,
-                          fontFamily: 'heading',
-                          fontSize: 14.sp)),
-                )
-              : Column(
+        appBar: Appbar(
+          title: (bottomindex.value == 0)
+              ? Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -124,30 +115,28 @@ class _StoreScreenState extends State<StoreScreen>
                           fontSize: 10.sp),
                     ),
                   ],
-                ),
-          backgroundColor: Colors.white,
-          elevation: 0,
-          leading: (ismyaccount.value)
-              ? Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 0.6.h, vertical: 0.7.h),
-                  child: CircleAvatar(
-                    radius: 20,
-                    backgroundColor: AppColors.lighterGray,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 0.7.h),
-                      child: Text(
-                        'fi fi-rr-arrow-small-left',
-                        // ignore: prefer_const_constructors
-                        style: TextStyle(
-                            fontFamily: 'uicons',
-                            color: Colors.black87,
-                            fontSize: 19.sp),
-                      ),
-                    ),
-                  ),
                 )
-              : Padding(
+              : (bottomindex.value == 1)
+                  ? Center(
+                      child: Text('My Order',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1.2,
+                              fontFamily: 'heading',
+                              fontSize: 14.sp)),
+                    )
+                  : Center(
+                      child: Text('My Account',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1.2,
+                              fontFamily: 'heading',
+                              fontSize: 14.sp)),
+                    ),
+          leading: (bottomindex == 0)
+              ? Padding(
                   padding:
                       EdgeInsets.symmetric(horizontal: 0.5.h, vertical: 0.2.h),
                   child: const CircleAvatar(
@@ -158,21 +147,31 @@ class _StoreScreenState extends State<StoreScreen>
                       color: AppColors.white,
                     ),
                   ),
+                )
+              : Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 1.h, vertical: 1.9.h),
+                  child: Center(
+                    child: Text(
+                      'fi fi-rr-arrow-small-left',
+                      // ignore: prefer_const_constructors
+                      style: TextStyle(
+                          fontFamily: 'uicons',
+                          color: Colors.black87,
+                          fontSize: 19.sp),
+                    ),
+                  ),
                 ),
-          actions: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 2.0.h, vertical: 2.0.h),
-              child: Center(
-                  child: Text(
-                'fi fi-rr-shopping-cart',
-                // ignore: prefer_const_constructors
-                style: TextStyle(
-                    fontFamily: 'uicons',
-                    color: Colors.black87,
-                    fontSize: 15.sp),
-              )),
-            )
-          ],
+          action: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 2.0.h, vertical: 2.0.h),
+            child: Center(
+                child: Text(
+              'fi fi-rr-shopping-cart',
+              // ignore: prefer_const_constructors
+              style: TextStyle(
+                  fontFamily: 'uicons', color: Colors.black87, fontSize: 15.sp),
+            )),
+          ),
         ),
         //bottomnavigation bar properties
         bottomNavigationBar: BottomNavigationBar(
@@ -200,4 +199,30 @@ class _StoreScreenState extends State<StoreScreen>
         backgroundColor: AppColors.lighterGray,
         body: Screenlist[bottomindex.value]));
   }
+}
+
+class Appbar extends StatelessWidget with PreferredSizeWidget {
+  const Appbar({
+    Key? key,
+    this.leading,
+    this.title,
+    this.action,
+  }) : super(key: key);
+  final leading;
+  final title;
+  final action;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: title,
+      backgroundColor: Colors.white,
+      elevation: 0,
+      leading: leading,
+      actions: [action],
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
