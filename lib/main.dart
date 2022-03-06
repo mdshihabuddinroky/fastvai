@@ -1,5 +1,7 @@
 import 'package:fastvai/screens/LandingPage/Landing_page.dart';
+import 'package:fastvai/screens/debug.dart';
 import 'package:fastvai/screens/home.dart';
+import 'package:fastvai/screens/order_details.dart';
 import 'package:fastvai/screens/search.dart';
 import 'package:fastvai/screens/set_delivery.dart';
 import 'package:fastvai/screens/introductionscreen.dart';
@@ -52,7 +54,9 @@ class _SplashState extends State<Splash> {
           title: 'Fastvai',
           theme: ThemeData.light(),
           home: AnimatedSplashScreen(
-              splash: 'assets/ficonfast.jpg', nextScreen: const StoreScreen()),
+              backgroundColor: Color.fromARGB(255, 18, 37, 71),
+              splash: 'assets/appicon.png',
+              nextScreen: const Onboard()),
         );
       },
     );
