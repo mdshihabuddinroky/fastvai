@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-//import 'package:onesignal_flutter/onesignal_flutter.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:sizer/sizer.dart';
@@ -20,9 +20,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.black, // navigation bar color
-    statusBarColor: Colors.white, // status bar color
-  ));
+      systemNavigationBarColor: Colors.black, // navigation bar color
+      statusBarColor: Colors.white,
+      statusBarIconBrightness: Brightness.dark));
 
   runApp(const Splash());
 }
@@ -41,8 +41,8 @@ class _SplashState extends State<Splash> {
     onesignalinit();
   }
 
-  onesignalinit() {
-    // OneSignal.shared.setAppId("c73de0da-2479-4680-8b73-6d48363d252e");
+  onesignalinit() async {
+    await OneSignal.shared.setAppId("c73de0da-2479-4680-8b73-6d48363d252e");
   }
 
   @override
