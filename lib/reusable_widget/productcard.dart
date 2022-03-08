@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:sizer/sizer.dart';
+
 class productListview extends StatelessWidget {
   final productcontroller;
   const productListview({
     Key? key,
     required this.productcontroller,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +20,11 @@ class productListview extends StatelessWidget {
       itemCount: productcontroller.productlist.length,
       itemBuilder: (BuildContext context, int index) {
         return Padding(
-          padding:  const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.all(3.0),
           child: GestureDetector(
             onTap: () {
-              Get.to(const details(), arguments: [
-                (productcontroller.productlist[index]),
-                index
-              ]);
+              Get.to(const details(),
+                  arguments: [(productcontroller.productlist[index]), index]);
             },
             child: Card(
               elevation: 0,
@@ -39,8 +38,7 @@ class productListview extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Image.network(
-                      productcontroller
-                          .productlist[index].images[0].src,
+                      productcontroller.productlist[index].images[0].src,
                       fit: BoxFit.fill,
                       width: 100,
                     ),
@@ -57,8 +55,7 @@ class productListview extends StatelessWidget {
                         Container(
                           width: 180,
                           child: Text(
-                            productcontroller
-                                .productlist[index].name,
+                            productcontroller.productlist[index].name,
                             style: GoogleFonts.ptSans(
                                 color: Colors.black,
                                 fontSize: 16,
@@ -70,8 +67,8 @@ class productListview extends StatelessWidget {
                         Container(
                           width: 150,
                           child: Html(
-                            data:
-                                productcontroller.productlist[index].purchaseNote,
+                            data: productcontroller
+                                .productlist[index].purchaseNote,
                             style: {
                               "body": Style(
                                   fontSize: const FontSize(14.0),
@@ -92,21 +89,18 @@ class productListview extends StatelessWidget {
                         ),
                         Text(
                           '৳${productcontroller.productlist[index].regularPrice}',
-                          style:  const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                         Visibility(
-                          visible: productcontroller
-                              .productlist[index].onSale,
+                          visible: productcontroller.productlist[index].onSale,
                           child: Text(
                             '৳${productcontroller.productlist[index].salePrice}',
-                            style:  const TextStyle(
+                            style: const TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.redAccent,
-                                decoration:
-                                    TextDecoration.lineThrough),
+                                decoration: TextDecoration.lineThrough),
                           ),
                         ),
                         const SizedBox(
@@ -115,18 +109,17 @@ class productListview extends StatelessWidget {
                         GestureDetector(
                             onTap: () {},
                             child: Container(
-                              width: 35,
-                              height: 32,
+                              width: 10.w,
+                              height: 5.h,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(5),
                                 color: Colors.deepOrange,
                               ),
-                              child:  const Padding(
-                                padding:  EdgeInsets.only(
-                                    top: 4, right: 4),
-                                child: Text(
+                              child: Padding(
+                                padding:
+                                    EdgeInsets.only(top: 0.9.h, right: 0.5.h),
+                                child: const Text(
                                   'fi fi-rr-shopping-cart-add',
                                   style: TextStyle(
                                     fontFamily: 'uicons',

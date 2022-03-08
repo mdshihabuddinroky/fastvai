@@ -9,7 +9,6 @@ import 'package:fastvai/screens/webview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:pixel_perfect/pixel_perfect.dart';
 
 class MyAccount extends StatelessWidget {
   MyAccount({Key? key}) : super(key: key);
