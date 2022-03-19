@@ -1,3 +1,5 @@
+import 'package:fastvai/Models/storemodel.dart';
+import 'package:fastvai/controller/onesignaluserid.dart';
 import 'package:fastvai/screens/LandingPage/Landing_page.dart';
 import 'package:fastvai/screens/debug.dart';
 import 'package:fastvai/screens/home.dart';
@@ -11,8 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:sizer/sizer.dart';
 
@@ -35,17 +35,11 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  final Onesignalcontroller onesignalc = Get.put(Onesignalcontroller());
   @override
   void initState() {
     super.initState();
-    onesignalinit();
-  }
-
-  onesignalinit() async {
-    await OneSignal.shared.setAppId("c73de0da-2479-4680-8b73-6d48363d252e");
-    final status = await OneSignal.shared.getDeviceState();
-    final String? osUserID = status?.userId;
-    print('onesignal player: $osUserID');
+    onesignalc.onesignalinit();
   }
 
   @override
@@ -59,7 +53,7 @@ class _SplashState extends State<Splash> {
           home: AnimatedSplashScreen(
               backgroundColor: Color.fromARGB(255, 18, 37, 71),
               splash: 'assets/appicon.png',
-              nextScreen: const Onboard()),
+              nextScreen: const StoreScreen()),
         );
       },
     );

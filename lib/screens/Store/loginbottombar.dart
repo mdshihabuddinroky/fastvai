@@ -1,16 +1,13 @@
 import 'package:fastvai/appcolor.dart';
-import 'package:fastvai/controller/facebook_login_controller.dart';
-import 'package:fastvai/controller/google_login_controller.dart';
+
 import 'package:fastvai/controller/logincontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 LoginBottom() {
-  final Facebooklogin LoginFacebook = Get.put(Facebooklogin());
   final Logincontroller logincontroller = Get.put(Logincontroller());
-  final googlesigninController googlecontroller =
-      Get.put(googlesigninController());
+
   Get.bottomSheet(
       Container(
         //color: Colors.white,

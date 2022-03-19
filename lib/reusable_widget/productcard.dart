@@ -1,3 +1,4 @@
+import 'package:fastvai/api_services/cartapi.dart';
 import 'package:fastvai/screens/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,10 +8,12 @@ import 'package:sizer/sizer.dart';
 
 class productListview extends StatelessWidget {
   final productcontroller;
-  const productListview({
+  productListview({
     Key? key,
     required this.productcontroller,
   }) : super(key: key);
+
+  final CartController cartController = Get.put(CartController());
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +110,11 @@ class productListview extends StatelessWidget {
                           height: 5,
                         ),
                         GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              cartController.addcart(productcontroller
+                                  .productlist[index].id
+                                  .toString());
+                            },
                             child: Container(
                               width: 10.w,
                               height: 5.h,
