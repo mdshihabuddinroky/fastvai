@@ -43,6 +43,9 @@ class _SplashState extends State<Splash> {
 
   onesignalinit() async {
     await OneSignal.shared.setAppId("c73de0da-2479-4680-8b73-6d48363d252e");
+    final status = await OneSignal.shared.getDeviceState();
+    final String? osUserID = status?.userId;
+    print('onesignal player: $osUserID');
   }
 
   @override
