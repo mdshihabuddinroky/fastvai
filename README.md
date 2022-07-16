@@ -1,17 +1,40 @@
-# fastvai
 
-A new Flutter project.
+# Fastvai
 
-## Getting Started
+Fastvai is a food delivery app connected with woocommerce . that was build on flutter. Fastvai will deliver food ,grocery & medicine in Bangladesh as fast as possible
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Authors
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [@katherinepetersonbdkoder](https://github.com/Bdkoder360)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# fastvai
+
+
+
+
+
+## Features
+
+- Food store with nrearby search
+- Add to cart
+- Payment
+- Order List
+- Order details
+- Social Login
+
+
+
+
+## Tech Stack
+
+**Client:** Flutter,dart
+
+**Server:** Woocommerce api
+
+
+## Video Preview
+
+https://user-images.githubusercontent.com/99485727/179347326-cd54abc7-1826-4145-af10-7981d527479f.mp4
+
+
+
