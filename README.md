@@ -4,15 +4,6 @@
 Fastvai is a food delivery app connected with woocommerce . that was build on flutter. Fastvai will deliver food ,grocery & medicine in Bangladesh as fast as possible
 
 
-## Authors
-
-- [@katherinepetersonbdkoder](https://github.com/Bdkoder360)
-
-
-
-
-
-
 ## Features
 
 - Food store with nrearby search
